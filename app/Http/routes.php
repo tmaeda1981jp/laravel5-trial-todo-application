@@ -14,3 +14,11 @@
 Route::resource('projects', 'ProjectsController');
 //Route::resource('tasks', 'TasksController');
 Route::resource('projects.tasks', 'TasksController');
+
+Route::bind('tasks', function ($value, $route) {
+    return App\Tasks::whereSlug($value)->first();
+});
+
+Route::bind('projects', function ($value, $route) {
+    return App\Project::whereSlug($value)->first();
+});
