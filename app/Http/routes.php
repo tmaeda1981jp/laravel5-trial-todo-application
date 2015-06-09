@@ -10,6 +10,8 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+Route::model('tasks', 'Task');
+Route::model('projects', 'Project');
 
 Route::resource('projects', 'ProjectsController');
 //Route::resource('tasks', 'TasksController');
